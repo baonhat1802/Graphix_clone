@@ -1,0 +1,6 @@
+ckpts/
+wandb/
+__pycache__/
+misc/
+*.pt
+*.bin
