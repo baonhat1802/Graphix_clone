@@ -38,7 +38,7 @@ def is_number(s: str) -> bool:
     try:
         float(s.replace(",", ""))
         return True
-    except:
+    except Exception:
         return False
 
 
@@ -140,7 +140,7 @@ def get_matched_entries(
             source_match = get_effective_match_source(
                 n_grams, match.a, match.a + match.size
             )
-            if source_match: # and source_match.size > 1
+            if source_match:  # and source_match.size > 1
                 match_str = field_value[match.b : match.b + match.size]
                 source_match_str = s[
                     source_match.start : source_match.start + source_match.size
@@ -148,7 +148,9 @@ def get_matched_entries(
                 c_match_str = match_str.lower().strip()
                 c_source_match_str = source_match_str.lower().strip()
                 c_field_value = field_value.lower().strip()
-                if c_match_str and not is_common_db_term(c_match_str): # and not is_number(c_match_str)
+                if c_match_str and not is_common_db_term(
+                    c_match_str
+                ):  # and not is_number(c_match_str)
                     if (
                         is_stopword(c_match_str)
                         or is_stopword(c_source_match_str)
@@ -159,7 +161,9 @@ def get_matched_entries(
                         match_score = 1.0
                     else:
                         if prefix_match(c_field_value, c_source_match_str):
-                            match_score = fuzz.ratio(c_field_value, c_source_match_str) / 100
+                            match_score = (
+                                fuzz.ratio(c_field_value, c_source_match_str) / 100
+                            )
                         else:
                             match_score = 0
                     if (
@@ -179,7 +183,7 @@ def get_matched_entries(
                             s_match_score,
                             match.size,
                         )
-    
+
     if not matched:
         return None
     else:
@@ -232,7 +236,7 @@ def get_database_matches(
     picklist = [ele.strip() for ele in picklist if isinstance(ele, str)]
     # picklist is unordered, we sort it to ensure the reproduction stability
     picklist = sorted(picklist)
-    
+
     matches = []
     if picklist and isinstance(picklist[0], str):
         matched_entries = get_matched_entries(

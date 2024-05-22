@@ -18,3 +18,137 @@
 2024-05-19 18:07:16,959 - Bidx - 32
 2024-05-19 18:07:16,959 - Bidx - 32
 2024-05-19 18:07:16,959 - Bidx - 32
+2024-05-20 16:15:23,235 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=2, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-20 16:15:23,247 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=2, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-20 16:15:23,251 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=2, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-20 16:15:23,251 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=2, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-20 16:16:11,064 - Bidx - 0
+2024-05-20 16:16:11,064 - Bidx - 0
+2024-05-20 16:16:11,064 - Bidx - 0
+2024-05-20 16:16:11,066 - Bidx - 0
+2024-05-20 16:18:45,139 - Sync_grad: 31
+2024-05-20 16:18:45,140 - Sync_grad: 31
+2024-05-20 16:18:45,140 - Sync_grad: 31
+2024-05-20 16:18:45,142 - Sync_grad: 31
+2024-05-20 16:18:45,183 - Bidx - 32
+2024-05-20 16:18:45,183 - Bidx - 32
+2024-05-20 16:18:45,183 - Bidx - 32
+2024-05-20 16:18:45,183 - Bidx - 32
+2024-05-20 16:21:18,548 - Sync_grad: 63
+2024-05-20 16:21:18,549 - Sync_grad: 63
+2024-05-20 16:21:18,549 - Sync_grad: 63
+2024-05-20 16:21:18,549 - Sync_grad: 63
+2024-05-20 16:21:18,592 - Bidx - 64
+2024-05-20 16:21:18,592 - Bidx - 64
+2024-05-20 16:21:18,592 - Bidx - 64
+2024-05-20 16:21:18,592 - Bidx - 64
+2024-05-20 16:23:52,066 - Sync_grad: 95
+2024-05-20 16:23:52,066 - Sync_grad: 95
+2024-05-20 16:23:52,066 - Sync_grad: 95
+2024-05-20 16:23:52,066 - Sync_grad: 95
+2024-05-20 16:23:52,067 - Bidx - 96
+2024-05-20 16:23:52,067 - Bidx - 96
+2024-05-20 16:23:52,067 - Bidx - 96
+2024-05-20 16:23:52,067 - Bidx - 96
+2024-05-20 16:27:24,947 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=2, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-20 16:27:24,948 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=2, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-20 16:27:40,295 - Bidx - 0
+2024-05-20 16:27:40,298 - Bidx - 0
+2024-05-20 16:28:08,374 - Bidx - 32
+2024-05-20 16:28:08,375 - Bidx - 32
+2024-05-20 16:28:36,022 - Sync_grad: 63
+2024-05-20 16:28:36,024 - Sync_grad: 63
+2024-05-20 16:28:36,062 - Bidx - 64
+2024-05-20 16:28:36,062 - Bidx - 64
+2024-05-20 16:29:03,685 - Bidx - 96
+2024-05-20 16:29:03,686 - Bidx - 96
+2024-05-20 16:29:31,358 - Sync_grad: 127
+2024-05-20 16:29:31,358 - Sync_grad: 127
+2024-05-20 16:29:31,398 - Bidx - 128
+2024-05-20 16:29:31,398 - Bidx - 128
+2024-05-20 16:29:59,052 - Bidx - 160
+2024-05-20 16:29:59,052 - Bidx - 160
+2024-05-20 16:30:26,780 - Sync_grad: 191
+2024-05-20 16:30:26,780 - Sync_grad: 191
+2024-05-20 16:30:26,781 - Bidx - 192
+2024-05-20 16:30:26,781 - Bidx - 192
+2024-05-20 16:30:54,433 - Bidx - 224
+2024-05-20 16:30:54,433 - Bidx - 224
+2024-05-20 16:31:22,156 - Sync_grad: 255
+2024-05-20 16:31:22,156 - Sync_grad: 255
+2024-05-20 16:31:22,157 - Bidx - 256
+2024-05-20 16:31:22,157 - Bidx - 256
+2024-05-20 16:31:49,827 - Bidx - 288
+2024-05-20 16:31:49,828 - Bidx - 288
+2024-05-20 16:32:28,727 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=6, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-20 16:32:28,727 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=6, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-20 16:32:43,926 - Bidx - 0
+2024-05-20 16:32:43,932 - Bidx - 0
+2024-05-20 16:34:06,337 - Bidx - 32
+2024-05-20 16:34:06,338 - Bidx - 32
+2024-05-20 16:35:28,133 - Sync_grad: 63
+2024-05-20 16:35:28,133 - Sync_grad: 63
+2024-05-20 16:35:28,173 - Bidx - 64
+2024-05-20 16:35:28,173 - Bidx - 64
+2024-05-20 16:36:50,012 - Bidx - 96
+2024-05-20 16:36:50,012 - Bidx - 96
+2024-05-20 16:38:11,881 - Sync_grad: 127
+2024-05-20 16:38:11,881 - Sync_grad: 127
+2024-05-20 16:38:11,921 - Bidx - 128
+2024-05-20 16:38:11,921 - Bidx - 128
+2024-05-20 16:56:53,007 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-20 16:56:53,010 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-20 16:56:54,068 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-20 16:56:54,069 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-20 16:57:11,566 - Bidx - 0
+2024-05-20 16:57:11,572 - Bidx - 0
+2024-05-20 16:57:11,624 - Bidx - 0
+2024-05-20 16:57:11,706 - Bidx - 0
+2024-05-21 18:40:06,473 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-21 18:40:06,474 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-21 18:40:49,924 - Bidx - 0
+2024-05-21 18:40:49,981 - Bidx - 0
+2024-05-21 18:51:32,049 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-21 18:51:32,049 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-21 18:51:48,440 - Bidx - 0
+2024-05-21 18:51:48,444 - Bidx - 0
+2024-05-21 19:02:56,710 - Bidx - 32
+2024-05-21 19:02:56,710 - Bidx - 32
+2024-05-21 19:14:01,544 - Sync_grad: 63
+2024-05-21 19:14:01,544 - Sync_grad: 63
+2024-05-21 19:14:01,545 - Bidx - 64
+2024-05-21 19:14:01,546 - Bidx - 64
+2024-05-21 19:25:08,854 - Bidx - 96
+2024-05-21 19:25:08,855 - Bidx - 96
+2024-05-21 19:36:15,566 - Sync_grad: 127
+2024-05-21 19:36:15,566 - Sync_grad: 127
+2024-05-21 19:36:15,567 - Bidx - 128
+2024-05-21 19:36:15,568 - Bidx - 128
+2024-05-21 19:47:31,166 - Bidx - 160
+2024-05-21 19:47:31,167 - Bidx - 160
+2024-05-21 19:58:38,507 - Sync_grad: 191
+2024-05-21 19:58:38,507 - Sync_grad: 191
+2024-05-21 19:58:38,508 - Bidx - 192
+2024-05-21 19:58:38,508 - Bidx - 192
+2024-05-21 20:09:44,545 - Bidx - 224
+2024-05-21 20:09:44,546 - Bidx - 224
+2024-05-21 20:20:50,843 - Sync_grad: 255
+2024-05-21 20:20:50,843 - Sync_grad: 255
+2024-05-21 20:20:50,844 - Bidx - 256
+2024-05-21 20:20:50,844 - Bidx - 256
+2024-05-21 20:39:09,517 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-21 20:39:09,626 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-21 20:39:23,526 - Bidx - 0
+2024-05-21 20:39:23,526 - Bidx - 0
+2024-05-21 20:57:01,879 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-21 20:57:01,887 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-21 20:57:17,945 - Bidx - 0
+2024-05-21 20:57:17,960 - Bidx - 0
+2024-05-21 21:04:33,675 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-21 21:04:33,678 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-21 21:04:33,681 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-21 21:04:33,681 - Namespace(block_size=8192, checkpointing_steps=200, column_num=10, epochs=1, lr=5e-05, mode='pt', output_ckpt_dir='./ckpts/pt-codes-1b', per_device_train_batch_size=4, pretrained_model_name_or_path='bigcode/starcoderbase-1b', pt_data_dir='./tokenized_corpus.bin', resume_from_checkpoint=None, resume_tag=None, save_all_states=True, seed=42, table_num=6, tensorboard_log_dir='./train_logs/pt-codes-1b', text2sql_data_dir='./data/sft_train_text2sql.json', warmup_ratio=0.0)
+2024-05-21 21:04:53,793 - Bidx - 0
+2024-05-21 21:04:53,814 - Bidx - 0
+2024-05-21 21:04:53,817 - Bidx - 0
+2024-05-21 21:04:53,820 - Bidx - 0

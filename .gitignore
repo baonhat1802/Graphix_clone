@@ -1,6 +1,11 @@
-ckpts/
 wandb/
 __pycache__/
+
+ckpts/
 misc/
 *.pt
+
+data_zip/
+pt_bin/
+*.zip
 *.bin

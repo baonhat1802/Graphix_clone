@@ -3,16 +3,22 @@ import json
 import argparse
 from func_timeout import func_set_timeout, FunctionTimedOut
 
+
 def parse_option():
     parser = argparse.ArgumentParser()
-    
-    parser.add_argument('--pred', type = str, default = "pred_sqls.txt")
-    parser.add_argument('--gold', type = str, default = "./data/test.json")
-    parser.add_argument('--db', type = str, default = "./data/database/everbright_bank/everbright_bank.sqlite")
-    
+
+    parser.add_argument("--pred", type=str, default="pred_sqls.txt")
+    parser.add_argument("--gold", type=str, default="./data/test.json")
+    parser.add_argument(
+        "--db",
+        type=str,
+        default="./data/database/everbright_bank/everbright_bank.sqlite",
+    )
+
     opt = parser.parse_args()
 
     return opt
+
 
 @func_set_timeout(60)
 def execute_sql(cursor, sql):
@@ -21,8 +27,9 @@ def execute_sql(cursor, sql):
 
     return sql_res
 
+
 def compare_sql(predicted_sql, ground_truth, db_path):
-    conn = sqlite3.connect(db_path, check_same_thread = False)
+    conn = sqlite3.connect(db_path, check_same_thread=False)
     # Connect to the database
     cursor = conn.cursor()
 
@@ -41,6 +48,7 @@ def compare_sql(predicted_sql, ground_truth, db_path):
         res = 1
     return res, predicted_res, ground_truth_res
 
+
 if __name__ == "__main__":
     opt = parse_option()
     pred_sqls = [line.strip() for line in open(opt.pred).readlines()]
@@ -51,7 +59,7 @@ if __name__ == "__main__":
     for question, pred, ground_truth in zip(questions, pred_sqls, ground_truth_sqls):
         # print(ground_truth)
         res, predicted_res, ground_truth_res = compare_sql(pred, ground_truth, opt.db)
-        
+
         if res == 0:
             print("question:", question)
             print("pred sql:", pred)
@@ -61,8 +69,8 @@ if __name__ == "__main__":
             else:
                 print("results of pred sql: None")
             print("results of gt sql:", ground_truth_res[:20])
-            print("-"*30)
-        
+            print("-" * 30)
+
         results.append(res)
-    
-    print("EX score:", sum(results)/len(results))
+
+    print("EX score:", sum(results) / len(results))

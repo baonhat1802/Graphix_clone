@@ -16,13 +16,18 @@ from utils.lr_scheduler import LinearWarmupCosineAnnealingLR
 from tqdm import tqdm
 
 
-model = AutoModelForCausalLM.from_pretrained("bigcode/starcoderbase-1b",token="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",attn_implementation="flash_attention_2",torch_dtype=torch.float32)
-model.to("cuda")
+# model = AutoModelForCausalLM.from_pretrained(
+#     "bigcode/starcoderbase-1b",
+#     token="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",
+#     attn_implementation="flash_attention_2",
+#     torch_dtype=torch.float32,
+# )
+# model.to("cuda")
 
-print(model)
+# print(model)
 
-# dataset = PretrainDataset("./tokenized_corpus.bin", 8192)
-# dataloader = DataLoader(dataset, batch_size=2, shuffle=True)
+dataset = PretrainDataset("./full_tokenized_corpus.bin", 8192)
+dataloader = DataLoader(dataset, batch_size=2, shuffle=True)
 
 # # for batch in tqdm(dataloader):
 # #     with open("log.txt", "a") as f:

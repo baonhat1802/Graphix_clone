@@ -46,10 +46,11 @@ from torch.utils.data import IterableDataset, Dataset, DataLoader
 #     def __len__(self):
 #         return self.length
 
+
 class PretrainDataset(Dataset):
     def __init__(self, pt_data_dir, block_size):
         super().__init__()
-        self.corpus = np.memmap(pt_data_dir, dtype = np.uint16, mode = 'r')
+        self.corpus = np.memmap(pt_data_dir, dtype=np.uint16, mode="r")
         self.block_size = block_size
         self.length = len(self.corpus) // self.block_size
 
@@ -60,14 +61,19 @@ class PretrainDataset(Dataset):
         input_ids = torch.from_numpy(input_ids.astype(np.int64))
         attention_mask = torch.ones(len(input_ids))
 
-        return {"input_ids": input_ids, "attention_mask": attention_mask, "labels": input_ids}
+        return {
+            "input_ids": input_ids,
+            "attention_mask": attention_mask,
+            "labels": input_ids,
+        }
 
     def __len__(self):
         return self.length
 
+
 if __name__ == "__main__":
     dataset = PretrainDataset("./data/pt_corpus/starcoder_corpus.bin", 6144)
-    dataloader = DataLoader(dataset, batch_size = 4, shuffle = False, drop_last = True)
+    dataloader = DataLoader(dataset, batch_size=4, shuffle=False, drop_last=True)
     for batch in dataloader:
-        print("-"*20)
+        print("-" * 20)
     print(len(dataset))

@@ -13,15 +13,6 @@ from accelerate.utils import set_seed
 from accelerate import Accelerator
 from torch.utils.tensorboard import SummaryWriter
 from utils.lr_scheduler import LinearWarmupCosineAnnealingLR
-import logging
-
-import wandb
-
-wandb.init(project="codes-1b")
-
-import psutil
-
-logger = logging.getLogger(__name__)
 
 """
 Training LLM using Huggingface Accelerate + Deepspeed.
@@ -68,8 +59,8 @@ def parse_option():
     parser.add_argument(
         "--save_all_states",
         action="store_true",
-        help="whether to save states of model, optimizer, and lr scheduler for resuming training, otherwise only model states are saved.",
         default=True,
+        help="whether to save states of model, optimizer, and lr scheduler for resuming training, otherwise only model states are saved.",
     )
 
     # args for pre-training
@@ -166,9 +157,6 @@ def sanity_check(input, target, tokenizer):
 
 
 def train(opt):
-    logging.basicConfig(
-        filename="batch_1b.log", level=logging.INFO, format="%(asctime)s - %(message)s"
-    )
     set_seed(opt.seed)
 
     writer = SummaryWriter(opt.tensorboard_log_dir)
@@ -183,7 +171,6 @@ def train(opt):
     )
 
     accelerator.print(opt)
-    logging.info(f"{str(opt)}")
     accelerator.print("tokens per batch:", total_batch_size * opt.block_size)
     accelerator.print("sequences per batch:", total_batch_size)
     accelerator.print("using LLM from:", opt.pretrained_model_name_or_path)
@@ -195,16 +182,14 @@ def train(opt):
     model = AutoModelForCausalLM.from_pretrained(
         opt.pretrained_model_name_or_path,
         token="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",
-        # attn_implementation="flash_attention_2",
+        attn_implementation="flash_attention_2",
     )
-
     tokenizer.pad_token_id = tokenizer.eos_token_id
     model.config.pad_token_id = tokenizer.eos_token_id
 
-    wandb.watch(model, log="all", log_freq=1)
-
     # enable gradient checkpointing to save GPU memory, but this action would slowdown the training speed 20-30%
-    model.gradient_checkpointing_enable()
+    # model.gradient_checkpointing_enable()
+
     if opt.mode == "pt":
         dataset = PretrainDataset(opt.pt_data_dir, opt.block_size)
         if accelerator.is_main_process:
@@ -226,8 +211,6 @@ def train(opt):
         batch_size=opt.per_device_train_batch_size,
         shuffle=True,
         drop_last=True,
-        num_workers=4,
-        pin_memory=True,
     )
 
     num_total_batches = math.ceil(
@@ -250,7 +233,6 @@ def train(opt):
     optimizer, model, dataloader, lr_scheduler = accelerator.prepare(
         optimizer, model, dataloader, lr_scheduler
     )
-
     print(type(optimizer))
     print(type(model))
     print(type(dataloader))
@@ -260,16 +242,12 @@ def train(opt):
     global_completed_steps = 0
     model.train()
 
-    print(len(dataloader))
-
     # resume pre-training if opt.resume_from_checkpoint is not None
     if opt.mode == "pt" and opt.resume_from_checkpoint:
         # resume model and optimizer states
-        # global_completed_steps = resume_model_and_optimizer(
-        #     model, opt.resume_from_checkpoint, opt.resume_tag
-        # )
-
-        global_completed_steps = 500
+        global_completed_steps = resume_model_and_optimizer(
+            model, opt.resume_from_checkpoint, opt.resume_tag
+        )
 
         resume_epoch = (
             global_completed_steps
@@ -290,22 +268,12 @@ def train(opt):
             )
         )
 
-        # TODO: resume lr scheduler - lr_ckpt 500
-        # lr_scheduler.load_state_dict(
-        #     {
-        #         "warmup_epochs": 4,
-        #         "max_epochs": 13388,
-        #         "warmup_start_lr": 0.0,
-        #         "eta_min": 5e-06,
-        #         "base_lrs": [5e-05],
-        #         "last_epoch": 2000,
-        #         "verbose": False,
-        #         "_step_count": 2001,
-        #         "_get_lr_called_within_step": False,
-        #         "_last_lr": [4.7575385661316106e-05],
-        #     }
-        # )
-
+        # resume lr scheduler
+        lr_scheduler.load_state_dict(
+            torch.load(
+                os.path.join(opt.resume_from_checkpoint, opt.resume_tag, "scheduler.pt")
+            )
+        )
         accelerator.print("lr scheduler state dict:", lr_scheduler.state_dict())
 
     st = time.time()
@@ -330,9 +298,6 @@ def train(opt):
                 accelerator.print("skip {}-th batch".format(batch_idx))
                 continue
 
-            if batch_idx % 32 == 0:
-                logging.info(f"Bidx - {str(batch_idx)}")
-
             # `accelerator.accumulate(model)` aims to set right `sync_gradients` state based on the recorded training steps
             with accelerator.accumulate(model):
                 outputs = model(**batch)
@@ -345,27 +310,8 @@ def train(opt):
                 lr_scheduler.step()
                 optimizer.zero_grad()
 
-                wandb.log(
-                    {
-                        "epoch": epoch,
-                        "loss": loss.item(),
-                        "learning_rate": lr_scheduler.get_last_lr()[0],
-                        "batch_idx": batch_idx,
-                        "global_step": global_completed_steps,
-                    }
-                )
-
-            if batch_idx % 50 == 0:
-                wandb.log(
-                    {
-                        "CPU Utilization": psutil.cpu_percent(),
-                        "RAM Utilization": psutil.virtual_memory().percent,
-                    }
-                )
-
             # 'accelerator.sync_gradients' checks if the accelerator has performed an optimization step on the `total_batch_size` examples
             if accelerator.sync_gradients:
-                logging.info(f"Sync_grad: {str(batch_idx)}")
                 global_completed_steps += 1
                 accelerator.print(
                     "GPU 0, step {}, loss {}".format(
@@ -426,7 +372,6 @@ def train(opt):
                 lr_scheduler,
                 accelerator,
             )
-    wandb.finish()
 
 
 if __name__ == "__main__":

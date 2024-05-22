@@ -190,11 +190,11 @@ def prepare_batch_inputs_and_labels(batch, tokenizer):
         if len(batch_column_number_in_each_table[batch_id]) > len(
             batch_aligned_table_labels[batch_id]
         ):
-            batch_column_number_in_each_table[batch_id] = (
-                batch_column_number_in_each_table[batch_id][
-                    : len(batch_aligned_table_labels[batch_id])
-                ]
-            )
+            batch_column_number_in_each_table[
+                batch_id
+            ] = batch_column_number_in_each_table[batch_id][
+                : len(batch_aligned_table_labels[batch_id])
+            ]
 
         if sum(batch_column_number_in_each_table[batch_id]) > len(
             batch_aligned_column_labels[batch_id]
